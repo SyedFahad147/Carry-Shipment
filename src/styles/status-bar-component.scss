@@ -1,0 +1,73 @@
+.delivery-status-bar {
+    position: relative;
+    width   : 100%;
+
+    .cell {
+        width            : 24px;
+        height           : 24px;
+        padding-top: 7px;
+        background-image : url('../../public/assets/img/status-bar/not-done.png');
+        background-repeat: no-repeat;
+        position         : absolute;
+        background-size  : contain;
+        z-index          : 3;
+        transform        : translate(-50%, -50%);
+        top: 3px;
+
+        span {
+            top        : 25px;
+            width      : 100px;
+            display    : block;
+            position   : relative;
+            left       : -35px;
+            text-align : center;
+            color      : #2c535f;
+            line-height: 1.14;
+            font-size  : 14px;
+            opacity    : .9;
+        }
+    }
+
+    .cell-1 {
+        left: 0%;
+    }
+
+    .cell-2 {
+        left: 33.33%;
+    }
+
+    .cell-3 {
+        left: 66.67%;
+    }
+
+    .cell-4 {
+        left: 100%;
+    }
+
+    .cell.cross {
+        background-image: url('../../public/assets/img/status-bar/rejected.png');
+    }
+    
+    .cell.done {
+        background-image: url('../../public/assets/img/status-bar/done.png');
+    }
+
+    .line-success {
+        height          : 6px;
+        background-color: #32c671;
+        z-index         : 2;
+        left            : 0;
+        transition      : width 1s;
+        position        : absolute;
+    }
+
+    .line-gray {
+        height          : 6px;
+        width           : 100%;
+        left            : 0;
+        right           : 0;
+        position        : absolute;
+        z-index         : 1;
+        background-color: #c9daf1;
+    }
+}

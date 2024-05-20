@@ -1,0 +1,211 @@
+$bg_primary: #41444b;
+$font_family_1: "Poppins",
+sans-serif;
+$bg_secondary : #52575d;
+$bg_active    : #fddb3a;
+$cl_text      : #f6f4e6;
+$color_primary: var(--color-primary);
+
+header nav {
+    box-shadow: none !important;
+}
+
+.profile-header {
+    background: $bg_primary;
+    position  : fixed;
+}
+
+.profile-page {
+    nav {
+        position  : fixed;
+        top       : 70px;
+        width     : 60px;
+        height    : 100%;
+        background: $bg_secondary;
+        transition: .5s;
+        overflow  : hidden;
+
+        ul {
+            position: absolute;
+            top     : 0;
+            padding : 0px;
+            left    : 0;
+            width   : 100%;
+
+            li {
+                list-style: none;
+                width     : 100%;
+                position  : relative;
+
+                a {
+                    &:hover {
+                        color: $bg_primary;
+                    }
+
+                    position       : relative;
+                    display        : block;
+                    width          : 100%;
+                    display        : flex;
+                    align-items    : center;
+                    text-decoration: none;
+                    color          : $cl_text;
+                    transition     : .2s;
+
+                    &::before {
+                        content   : "";
+                        position  : absolute;
+                        top       : 0;
+                        left      : 0;
+                        width     : 0;
+                        height    : 100%;
+                        transition: .2s;
+                    }
+
+                    .icon {
+                        position   : relative;
+                        display    : block;
+                        min-width  : 60px;
+                        height     : 60px;
+                        line-height: 60px;
+                        text-align : center;
+
+                        * {
+                            font-size: 1.1em;
+                        }
+                    }
+
+                    .title {
+                        position : relative;
+                        font-size: .85em;
+                    }
+                }
+
+                &:hover {
+                    a {
+                        &::before {
+                            background-color: $color_primary;
+                            width           : 100%;
+                        }
+                    }
+                }
+
+                a.toggle {
+                    border-bottom: 3px solid $bg_primary;
+                }
+            }
+        }
+    }
+
+    .card {
+        box-shadow: 0px 0px 12px 0.1px #00000060;
+    }
+
+    .form-outline {
+        .form-control:focus~.form-label {
+            color: $color_primary;
+        }
+
+        .form-control:focus~.form-notch {
+            * {
+                border-color: $color_primary;
+            }
+
+            .form-notch-leading {
+                box-shadow: -1px 0 0 0 $color_primary, 0 1px 0 0 $color_primary, 0 -1px 0 0 $color_primary;
+            }
+
+            .form-notch-middle {
+                box-shadow: 0 1px 0 0 $color_primary;
+                border-top: 1px solid transparent;
+            }
+
+            .form-notch-trailing {
+                box-shadow: 1px 0 0 0 $color_primary, 0 -1px 0 0 $color_primary, 0 1px 0 0 $color_primary;
+            }
+        }
+    }
+
+    .form-check-input[type=checkbox],
+    .form-check-input[type=radio] {
+        &:checked {
+            background-color: $color_primary;
+            border          : 2px solid $color_primary;
+        }
+
+        &:focus:before {
+            box-shadow: 0px 0px 0px 13px $color_primary;
+            transform : scale(1);
+            transition: box-shadow .2s, transform .2s;
+        }
+    }
+
+    .form-check-input[type=radio] {
+        &:after {
+            background-color: gray;
+            width: 0.6rem;
+            height: 0.6rem;
+            margin: 4px;
+        }
+
+        &:checked:after {
+            background-color: white;
+            margin: 0px;
+        }
+    }
+
+    .btn-outline-dark {
+        &:hover {
+            background-color: $color_primary;
+            border-color    : $color_primary;
+        }
+    }
+
+    .profile-right {
+        min-height  : 100vh;
+        padding-top : 70px;
+        padding-left: 60px;
+        transition  : .5s;
+    }
+
+    nav.active+.profile-right {
+        padding-left: 300px;
+    }
+
+    nav.active {
+        width: 300px;
+    }
+
+    a.toggle {
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-toggle {
+            display : flex !important;
+            position: fixed;
+            z-index : 1000;
+        }
+
+        nav {
+            left: -60px;
+
+            ul {
+                li {
+                    a.toggle {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .profile-right,
+        nav.active+.profile-right {
+            padding-left: 0px;
+        }
+
+        nav.active {
+            left : 0;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+.site-name-primary {
+  color: var(--color-primary);
+}
+
+#scroll-to-top {
+  cursor: pointer;
+}
+
+.whatsapp-btn {
+  height: 45px;
+  width: 45px;
+  right: 13px;
+  bottom: 13px;
+  background: green;
+  z-index: 100;
+  transition: .5s;
+}
+
+.whatsapp-btn.move-up {
+  bottom: 67px;
+}
+
+.constructions {
+  .card-item p {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+  }
+}
+
+.about-content {
+  h3:after {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}
+
+.learn-more-link {
+  color: var(--color-primary);
+  &:hover {
+    color: var(--color-default);
+  }
+}
+
+.learn-more-icon {
+  position: relative;
+  top: 4px;
+}
